@@ -18,13 +18,52 @@
 - S3 Bucket Name: jenkins-321528232261-us-east-2-an
 - Status: Webhook verified & S3 proof uploaded.
 
-## Jenkins Pipeline Creation Process
+# Jenkins Pipeline Creation Process
+
+## Webhook Creation
 
 Before a Jenkins pipeline can be created, a GitHub repository with working webhook must be configured.  
 
 To create a working webhook, log into your repository and click Settings:
 
 ![jenkins pipeline creation process](./screencaps/github-webhook/webhook-step1.png)
+
+Next select Webhooks:
+
+![jenkins pipeline creation process](./screencaps/github-webhook/webhook-step2.png)
+
+Proceed by clicking Add webhook:
+
+![jenkins pipeline creation process](./screencaps/github-webhook/webhook-step3.png)
+
+In the next screen, add your Jenkins web URL with "/github-webhook/" appended to it:
+
+![jenkins pipeline creation process](./screencaps/github-webhook/webhook-step4.png)
+
+Finally, click Add webhook:
+
+![jenkins pipeline creation process](./screencaps/github-webhook/webhook-step5.png)
+
+To ensure that the webhook is working, launch a terminal session and run the following commands:
+
+- git commit --allow-empty -m "test webhook"
+- git push origin main
+
+![jenkins pipeline creation process](./screencaps/github-webhook/webhook-step6.png)
+
+You should receive the following result with a green checkmark as proof of success:
+
+![jenkins pipeline creation process](./screencaps/github-webhook/webhook-step7.png)
+
+## Jenkins Pipeline Creation
+
+Now that the webhook is done, the pipeline can now be created in Jenkins. 
+
+Log into Jenkins and click New Build:
+
+![jenkins pipeline creation](./screencaps/jenkins-pipeline/jenkins-pipeline-step1.png)
+
+
 
  
 
