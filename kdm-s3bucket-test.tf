@@ -28,7 +28,7 @@ resource "aws_s3_object" "armageddon-proof-png" {
   bucket       = "jenkins-321528232261-us-east-2-an"
   key          = "armageddon-pass-email.png"
   source       = "./armageddon-pass-email.png"
-  etag         = filemd5("./Armageddon_Pass.png")
+  etag         = filemd5("./armageddon-pass-email.png")
   content_type = "image/png"
 
 }
