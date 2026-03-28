@@ -59,9 +59,39 @@ You should receive the following result with a green checkmark as proof of succe
 
 Now that the webhook is done, the pipeline can now be created in Jenkins. 
 
-Log into Jenkins and click New Build:
+Log into Jenkins and click New Item:
 
 ![jenkins pipeline creation](./screencaps/jenkins-pipeline/jenkins-pipeline-step1.png)
+
+Enter the name of your build and select Pipeline:
+
+![jenkins pipeline creation](./screencaps/jenkins-pipeline/jenkins-pipeline-step2.png)
+
+Next, select GitHub hook trigger for GITScm polling:
+
+![jenkins pipeline creation](./screencaps/jenkins-pipeline/jenkins-pipeline-step3.png)
+
+Click Definition and choose Pipeline script from SCM:
+
+![jenkins pipeline creation](./screencaps/jenkins-pipeline/jenkins-pipeline-step4.png)
+
+In the SCM dropdown, select Git:
+
+![jenkins pipeline creation](./screencaps/jenkins-pipeline/jenkins-pipeline-step5.png)
+
+Add your GitHub repository URL in the Repository URL field and "./main" in the Branch Specifier field:
+
+![jenkins pipeline creation](./screencaps/jenkins-pipeline/jenkins-pipeline-step6.png)
+
+Next, click Save to finish creating the pipeline and then finally Run Build.
+
+![jenkins pipeline creation](./screencaps/jenkins-pipeline/jenkins-pipeline-step7.png)
+
+If the build is successful, you should receive the following message within Jenkins: 
+
+![jenkins pipeline creation](./screencaps/jenkins-pipeline/jenkins-pipeline-success.png)
+
+Done.
 
 
 
