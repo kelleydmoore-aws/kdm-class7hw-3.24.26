@@ -41,3 +41,32 @@ resource "aws_s3_object" "armageddon-repo-link" {
   etag         = filemd5("./armageddon-repo-link.txt")
   content_type = "text/plain"
 }
+
+resource "aws_s3_object" "github-webhook-png" {
+
+  bucket       = "jenkins-321528232261-us-east-2-an"
+  key          = "github-webhook.png"
+  source       = "./proof/github-webhook.png"
+  etag         = filemd5("./proof/github-webhook.png")
+  content_type = "image/png"
+
+}
+resource "aws_s3_object" "jenkins-pipeline-console-output-txt" {
+
+  bucket       = "jenkins-321528232261-us-east-2-an"
+  key          = "jenkins-pipeline-console-output.txt"
+  source       = "./proof/jenkins-pipeline-console-output.txt"
+  etag         = filemd5("./proof/jenkins-pipeline-console-output.txt")
+  content_type = "text/plain"
+
+}
+
+resource "aws_s3_object" "jenkins-pipeline-success-png" {
+
+  bucket       = "jenkins-321528232261-us-east-2-an"
+  key          = "jenkins-pipeline-success.png"
+  source       = "./proof/jenkins-pipeline-success.png"
+  etag         = filemd5("./proof/jenkins-pipeline-success.png")
+  content_type = "image/png"
+
+}
