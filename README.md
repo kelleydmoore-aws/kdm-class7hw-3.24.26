@@ -1,6 +1,8 @@
 # AWS S3 bucket Pipeline
 
 ## Deliverables
+
+- An S3 bucket was previously created in the console and the required deliverables have been placed within.
 - Spin up an S3 in terraform with uploaded pictures/screenshots proving that THEO SAID you passed Armageddon (whether directly or via group leader). 
 - A link to the Armageddon repo in a text file or markdown file. 
 - A successful webhook invocation of your pipeline. 
