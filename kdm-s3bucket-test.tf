@@ -12,7 +12,7 @@ terraform {
     key     = "jenkins/jenkins-s3-kdm.tfstate"
     region  = "us-east-2"
     encrypt = true
-
+    
   }
 
 }
@@ -22,7 +22,34 @@ provider "aws" {
   region = "us-east-2"
 
 }
+resource "aws_s3_bucket_public_access_block" "assets_access" {
+  bucket = "jenkins-321528232261-us-east-2-an"
 
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+
+}
+
+resource "aws_s3_bucket_policy" "public_read_access" {
+  bucket = "jenkins-321528232261-us-east-2-an"
+
+  depends_on = [aws_s3_bucket_public_access_block.assets_access]
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid       = "PublicReadGetObject"
+        Effect    = "Allow"
+        Principal = "*"
+        Action    = "s3:GetObject"
+        Resource  = "arn:aws:s3:::jenkins-321528232261-us-east-2-an/*"
+      }
+    ]
+  })
+}
 resource "aws_s3_object" "armageddon-proof-png" {
 
   bucket       = "jenkins-321528232261-us-east-2-an"
